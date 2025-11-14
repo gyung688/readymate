@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './config/db/database.module';
 import { dbValidationSchema } from './config/db/database.config';
+import { PostModule } from './post/post.module';
 import dbConfig from './config/db/database.config';
 
 console.log('env: ' + process.env.NODE_ENV);
@@ -17,6 +18,7 @@ console.log('env: ' + process.env.NODE_ENV);
       load: [dbConfig],
     }),
     DatabaseModule,
+    PostModule,
   ],
   controllers: [AppController],
   providers: [AppService],
